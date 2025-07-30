@@ -1,0 +1,151 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* About Us Section */
+.about-us {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 30px;
+  background-color: #f5f5f5;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #000;
+  background-color: #eaeaea;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social-icons a.instagram:hover {
+  background-color: #e1306c;
+  color: #fff;
+}
+
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+/* About Images */
+.about-images {
+  flex: 1 1 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.about-images img {
+  width: 45%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-us {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.contact-us h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-us p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-images img {
+    width: 90%;
+  }
+}

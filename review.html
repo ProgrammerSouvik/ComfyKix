@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 2.5rem; /* Larger stars */
+            color: #cbd5e1; /* Gray for unselected stars */
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+        .star-rating input[type="radio"]:checked ~ label {
+            color: #facc15; /* Yellow for selected stars */
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #facc15; /* Yellow on hover */
+        }
+        /* For displaying static stars */
+        .static-star {
+            font-size: 1.5rem; /* Smaller stars for display */
+            color: #facc15; /* Always yellow for filled stars */
+        }
+        .static-star-empty {
+            font-size: 1.5rem;
+            color: #cbd5e1; /* Gray for empty stars */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-bold mb-4 md:mb-0">Customer Reviews</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="#" class="hover:text-blue-200 transition duration-300">Home</a></li>
+                    <li><a href="Com.html" class="hover:text-blue-200 transition duration-300">Products</a></li>
+                    <li><a href="#" class="hover:text-blue-200 transition duration-300">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-10">
+        <!-- Submit a Review Section -->
+        <section class="mb-12 bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Share Your Experience</h2>
+            <form class="max-w-2xl mx-auto">
+                <div class="mb-6">
+                    <label for="reviewer-name" class="block text-gray-700 text-lg font-medium mb-2">Your Name</label>
+                    <input type="text" id="reviewer-name" name="reviewer-name" placeholder="Enter your name"
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
+                </div>
+                <div class="mb-6">
+                    <label for="review-text" class="block text-gray-700 text-lg font-medium mb-2">Your Review</label>
+                    <textarea id="review-text" name="review-text" rows="5" placeholder="Write your review here..."
+                              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base resize-y"></textarea>
+                </div>
+                <div class="mb-8 text-center">
+                    <label class="block text-gray-700 text-lg font-medium mb-4">Your Rating</label>
+                    <div class="star-rating flex justify-center flex-row-reverse">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">&#9733;</label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Existing Reviews Section -->
+        <section class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">What Our Customers Say</h2>
+            <div class="space-y-8">
+                <!-- Sample Review 1 -->
+                <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                    <div class="flex items-center mb-2">
+                        <p class="font-bold text-gray-900 text-lg mr-3">John D.</p>
+                        <div class="flex">
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"Absolutely love the new running shoes! They are incredibly comfortable and provide excellent support during my long runs. Highly recommend this brand for any athlete."</p>
+                    <p class="text-gray-500 text-sm mt-2">Reviewed on July 29, 2025</p>
+                </div>
+
+                <!-- Sample Review 2 -->
+                <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                    <div class="flex items-center mb-2">
+                        <p class="font-bold text-gray-900 text-lg mr-3">Sarah P.</p>
+                        <div class="flex">
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star-empty">&#9733;</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"Great quality sportswear. The fabric is breathable and durable. The fit was a bit snug, so I might size up next time, but overall very satisfied."</p>
+                    <p class="text-gray-500 text-sm mt-2">Reviewed on July 27, 2025</p>
+                </div>
+
+                <!-- Sample Review 3 -->
+                <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                    <div class="flex items-center mb-2">
+                        <p class="font-bold text-gray-900 text-lg mr-3">Mike R.</p>
+                        <div class="flex">
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star">&#9733;</span>
+                            <span class="static-star-empty">&#9733;</span>
+                            <span class="static-star-empty">&#9733;</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"The delivery was fast, and the product arrived well-packaged. The sports bag is good, but the zipper feels a bit flimsy. Could be better for the price."</p>
+                    <p class="text-gray-500 text-sm mt-2">Reviewed on July 25, 2025</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Sports Brand. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-blue-400 transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300">Terms of Service</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
